@@ -17,7 +17,7 @@ const PORT = 8080;
 
 const routes = require('./routes/api');
 
-const MONGODB_URI = "mongodb+srv://mo5s5:077104109@cluster0.rjke6lb.mongodb.net/?retryWrites=true&w=majority"
+const MONGODB_URI = ""
 
 mongoose.connect(MONGODB_URI || 'mongodb://localhost/market_demo', {
     useNewUrlParser: true,
