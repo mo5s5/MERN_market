@@ -1,0 +1,209 @@
+@import'../../variables.scss';
+
+table,
+th,
+td {
+    border: solid 2px;
+    border-color: $clr-border-grey;
+}
+
+table {
+    // width: 60%;
+    border-right: none;
+
+    th {
+        background-color: $clr-primary-background-grey;
+        border-top: none;
+        border-bottom: none;
+        border-left: none;
+        font-size: 1.3rem;
+
+    }
+
+    td {
+        border-bottom: none;
+        border-left: none;
+        font-size: 1.3rem;
+        // .name{
+        //     font-size: 2rem;
+        // }
+
+        .button {
+            width: 3rem;
+            padding: 0 1em;
+            border-radius: 5px;
+            background-color: $clr-primary;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+
+        }
+
+        .image {
+            width: 5rem;
+        }
+
+        img {
+            width: 100%;
+        }
+
+
+        .count {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            align-items: center;
+            gap: .2rem;
+
+            .count-input {
+                text-align: center;
+                width: 3rem;
+                font-size: 1.1rem;
+                padding: 0;
+                border-color: red;
+            }
+
+
+        }
+
+        .remove {
+            display: inline-block;
+            background-color: red;
+            // height: 1rem;
+            // width: 2rem;
+
+            color: white;
+            // font-weight: normal;
+            border: none;
+            // font-size: .7rem;
+        }
+
+
+
+    }
+
+    .summary-text,
+    .summary {
+        font-size: 1.5rem;
+    }
+
+}
+
+
+
+
+
+@media only screen and(max-width:650px) {
+    table {
+        tbody {
+            th {
+                font-size: .7rem;
+            }
+
+            tr {
+
+
+                td {
+                    .image{
+                        width: 3rem;
+                    }
+                    .count {
+                        .count-input {
+                            width: 2rem;
+                            font-size: .7rem;
+                        }
+
+                        .remove {
+                            font-size: .6rem;
+                        }
+                    }
+
+
+                    font-size: .7rem;
+
+                    .button {
+                        width: 2rem;
+                        font-size: .7rem;
+                    }
+
+
+
+
+                }
+            }
+        }
+
+        .summary, .summary-text {
+            font-size: .7rem;
+        }
+    }
+}
+
+
+
+
+
+// .example-enter {
+//     opacity: 0.01;
+// }
+
+// .example-enter.example-enter-active {
+//     opacity: 1;
+//     transition: opacity 300ms ease-in;
+// }
+
+// .example-leave {
+//     opacity: 1;
+// }
+
+// .example-leave.example-leave-active {
+//     opacity: 0.01;
+//     transition: opacity 300ms ease-in;
+// }
+
+// .item-container {
+//     display: grid;
+//     grid-template-columns: repeat(9, 10%);
+//     gap: .5rem;
+//     width: 100%;
+//     margin-left: 5rem;
+//     border-style: solid;
+//     border-width: 0 1px 1px 1px;
+//     border-color: $clr-border-grey;
+//     padding: 1em 0;
+
+
+
+//     img {
+//         width: 2rem;
+//         grid-column: 1/2;
+//     }
+
+//     .name {
+//         grid-column: 2/4;
+//     }
+
+//     .model {
+//         grid-column: 4/5;
+//     }
+
+//     .count {
+//         grid-column: 5/8;
+//         display: flex;
+//         justify-content: center;
+
+//         button {
+//             font-size: 1rem;
+//             padding: .5em;
+//             width: 5rem;
+//         }
+
+//         .input {
+//             text-align: center;
+//         }
+
+
+
+//     }
+// }

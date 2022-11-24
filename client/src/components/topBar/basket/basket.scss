@@ -1,0 +1,86 @@
+@import '../../../variables.scss';
+
+.container {
+   position: relative;
+   top: 1rem;
+
+   // .empty {
+   //    width: 6rem;
+
+   // }
+
+   img {
+      width: 5rem;
+      height: 5rem;
+   }
+
+   .full {
+      // width: 6rem;
+      animation: shake 800ms ease-in-out infinite;
+      animation-delay: 200;
+      animation-direction: alternate-reverse;
+   }
+
+   span {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      font-size: 1rem;
+      font-weight: bold;
+      color: $clr-primary;
+   }
+
+}
+
+@keyframes shake {
+   0% {
+      transform: rotate(-10deg);
+   }
+
+   100% {
+      transform: rotate(10deg);
+
+   }
+}
+
+
+//**********--Media queries---*******/
+
+@media screen and (max-width:750px) {
+   .container {
+      img {
+         width: 3rem;
+         height: 3rem;
+      }
+
+      span {
+         font-size: .7rem;
+      }
+   }
+}
+
+@media screen and (max-width:560px) {
+   .container {
+      img {
+         width: 2.5rem;
+         height: 2.5rem;
+      }
+
+      span {
+         font-size: .5rem;
+      }
+   }
+}
+
+@media screen and (max-width:325px) {
+   .container {
+      img {
+         width: 2rem;
+         height: 2rem;
+      }
+
+      span {
+         font-size: .5rem;
+      }
+   }
+}

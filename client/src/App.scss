@@ -1,0 +1,46 @@
+@import './variables.scss';
+
+.App {
+  text-align: center;
+  background: rgb(249, 249, 249);
+}
+
+* {
+  box-sizing: border-box;
+  // overflow: visible;
+
+}
+
+html, body{
+  overflow-x: hidden;
+}
+// body{
+//   height: 200vh;
+// }
+
+// .nav {
+//   position: -webkit-sticky;
+//   position: sticky;
+//   top: 0;
+//   z-index: 1;
+// }
+
+.category{
+      margin-left: 1rem;
+}
+
+.homePage{
+  margin-left:5%;
+  margin-right: 5%;
+  
+}
+
+.productPage{
+  margin-left:5%;
+  margin-right: 5%;
+}
+
+// .top{position: sticky;
+// top: 0;}
+
+

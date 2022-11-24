@@ -1,0 +1,118 @@
+@import '../../variables.scss';
+
+.productCard {
+    display: flex;
+    justify-content: space-between;
+    border: solid 2px;
+    border-radius: 10px;
+    border-color: $clr-primary;
+    margin-bottom: 1rem;
+    margin-right: 5rem;
+
+    img {
+        width: 8rem;
+        height: 8rem;
+        padding: 1em;
+        margin-top: 3rem;
+    }
+
+    p {
+        font-size: 1rem;
+        // margin-top: 2rem;
+        // margin-left: 2rem;
+    }
+
+    .price {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-top: 4rem;
+        font-size: 1.5rem;
+        margin-bottom: .1rem;
+    }
+
+    .cartIcon {
+        width: 5rem;
+        height: 5rem;
+        margin-bottom: .1rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+/************---MEdi Query---************/
+
+@media only screen and (max-width:1150px) {
+    .productCard {
+
+        .price {
+            font-size: 1.2rem;
+        }
+        img {
+            width: 6rem;
+            height: 6rem;
+        }
+    }
+}
+
+@media only screen and (max-width:1050px) {
+    .productCard {
+        p{
+            font-size:.8rem ;
+        }
+        // .price {
+        //     font-size: 1.2rem;
+        // }
+        // img {
+        //     width: 6rem;
+        //     height: 6rem;
+        // }
+    }
+}
+
+@media only screen and (max-width:850px) {
+    .productCard {
+        p{
+            font-size:.6rem ;
+        }
+        .price {
+            font-size: 1rem;
+        }
+        img {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        h3{
+            font-size: 1rem;
+        }
+        .cartIcon{
+            width: 4rem;
+        height: 4rem;
+        }
+    }
+}
+
+@media only screen and (max-width:650px) {
+    .productCard {
+        p{
+            margin-left: 1rem;
+        }
+        .price {
+            font-size: .8rem;
+        }
+        img {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        h3{
+            font-size: 1rem;
+        }
+        .cartIcon{
+            width: 3rem;
+        height: 3rem;
+        }
+    }
+}

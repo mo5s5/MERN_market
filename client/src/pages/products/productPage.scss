@@ -1,0 +1,65 @@
+@import '../../variables.scss';
+
+.productPage {
+  display: flex;
+  gap: 4rem;
+  justify-content: space-between;
+  min-height: 100%;
+  flex-direction: row;
+  align-items: stretch;
+  // height: 100vh; 
+  // margin-right: rem;
+
+  // overflow-x: hidden;
+
+
+
+   
+
+
+
+}
+
+
+/***********---Media Query---*********/
+
+@media only screen and (max-width:1250px) {
+  .productPage {
+    .categorySmall-container {
+      .categorySmall {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:1150px) {
+  .productPage {
+    .categorySmall-container {
+      .categorySmall {
+        font-size: .9rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:1050px) {
+  .productPage {
+    gap: 1rem;
+
+    .categorySmall-container {
+      .categorySmall {
+        font-size: .6rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:580px) {
+  .productPage {
+
+    .categorySmall-container {
+      display: none;
+    }
+  }
+}
