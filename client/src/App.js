@@ -12,6 +12,7 @@ import DeliveryPage from './pages/delivery/DeliveryPage';
 import CartPage from './pages/cart/CartPage';
 import SalesPage from './pages/salesPage/SalesPage';
 import axios from 'axios';
+import Modal from './components/modal/Modal';
 
 function App() {
 
@@ -22,6 +23,8 @@ function App() {
   const [categories, setCategories] = useState([])
   const [cartItems, setCartItems] = useState([]);
   const [products, setProducts] = useState();
+  const [modalOpen, setModalOpen] = useState(false);
+  
 
 
 
@@ -106,6 +109,8 @@ function App() {
 
   return (
     <div className='App'>
+              {modalOpen && <Modal setModalOpen={setModalOpen} />}
+
       <TopBar cartItems={cartItems} />
 
       <Routes>
@@ -120,6 +125,7 @@ function App() {
         <Route path='/basket'
           element={
             <CartPage
+            setModalOpen={setModalOpen}
               cartItems={cartItems}
               onAddToCart={onAddToCart}
               onSubstract={onSubstract}

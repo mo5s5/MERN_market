@@ -1,13 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './cartPage.scss'
 import OrderItemsList from '../../components/orderItem/OrderItemsList.js';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Modal from '../../components/modal/Modal';
 
 
 export default function CartPage(props) {
 
-  const { cartItems, onAddToCart, onSubstract, onRemoveFromCart } = props;
+  const { cartItems, onAddToCart, onSubstract, onRemoveFromCart, setModalOpen } = props;
 
   const [deliveryType, setDeliveryType] = useState('');
   const [paymentType, setPaymentType] = useState('');
@@ -15,6 +16,7 @@ export default function CartPage(props) {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [comment, setComment] = useState('');
+  
   // useEffect(()=>{
 
   // },[deliveryType,paymentType])
@@ -76,7 +78,7 @@ export default function CartPage(props) {
   };
 
 
-  const onSubmit = (payload, cartItems, deliveryType, paymentType, comment) => {
+  const onSubmit = (payload, cartItems, deliveryType, paymentType, comment,setModalOpen) => {
     payload.cartItems = cartItems;
     payload.deliveryType = deliveryType;
     payload.paymentType = paymentType;
@@ -93,12 +95,11 @@ export default function CartPage(props) {
       payload.paymentType = paymentType;
       payload.comment = comment;
     }
-
     console.log(payload);
     sendEmail();
+    setModalOpen(true);
+    cartItems.length=0;
   };
-
-
 
   //*  ** **  **     Rendering Part     **  **  **  */
 
@@ -109,7 +110,6 @@ export default function CartPage(props) {
       <div className='cartPage'>
 
         <div className='title'>Оформление заказа</div>
-
 
         <div className='main-content'>
           <div className='orderItem'>
@@ -182,13 +182,11 @@ export default function CartPage(props) {
             <input type={'text'} placeholder='Ваши Комментарии'></input>
           </div>
 
-
         </div>
         <button className='submit'
-          onClick={() => onSubmit(payload, cartItems, deliveryType, paymentType, comment)}
+          onClick={() => onSubmit(payload, cartItems, deliveryType, paymentType, comment, setModalOpen)}
         // onClick={() => sendEmail()}
         >Оформить заказ</button>
-
 
 
       </div>
@@ -204,58 +202,5 @@ export default function CartPage(props) {
       </div>
     )
   }
-
-
-
-
-
-
-
-  /*************** */
-
-
-  //   {/* <table width="100%" cellspacing="0" border="1">
-  //   <tr>
-  //     <th>Фото</th>
-  //     <th>Наименование товара</th>
-  //     <th>Модель</th>
-  //     <th>Кол-во</th>
-  //     <th>Цена</th>
-  //     <th>Итого</th>
-  //   </tr>
-  //   <tr>
-  //     <td></td>
-  //   </tr>
-  // </table> */}
-
-
-  //   {/* <div className='orderItem-head'>
-  //             <div className='photo'>Фото</div>
-  //             <div className='name'>Наименование товара</div>
-  //             <div className='model'>Модель</div>
-  //             <div className='count'>Кол-во</div>
-  //             <div className='price'>Цена</div>
-  //             <div className='summary'>Итого</div>
-  //           </div> */}
-  //   /************ */
-
-
-  //   {/* {cartItems.length === 0 && <div>Cart is Empty</div>} */ }
-  //   {/* 
-  //       {cartItems.map((item) => (
-  //         <div key={item.id} >
-  //           <div> {item.name}</div>
-  //         </div>
-
-  //       ))} */}
-
-
-  //   {/* {cartItems.map((product)=>(
-  //   <div>{product.name}</div>
-  // ))
-
-  // } */}
-
-
 
 }
