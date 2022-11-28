@@ -29,7 +29,6 @@ export default function NavBar(props) {
     }
     return (
         <header className={navbarClasses.join(" ")}>
-            {/* <header className='navbar'> */}
             <ul className='nav'>
                 <CustomLink to='/'>Главная</CustomLink>
                 <CustomLink to='/delivery'>Доставка</CustomLink>
@@ -41,9 +40,7 @@ export default function NavBar(props) {
                     <span className='cart-count'>{cartItems.length}</span>
                     <img alt='cart' src='https://img.icons8.com/external-sbts2018-solid-sbts2018/58/FFFFFF/external-cart-ecommerce-basic-1-sbts2018-solid-sbts2018.png'></img>
                 </Link>
-
             </div>
-
         </header>
     )
 }

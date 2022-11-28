@@ -9,32 +9,22 @@
     align-items: center;
     margin-bottom: 1rem;
 
- .cart-nav{
-    display: none;
-    // width: 40px;
-    // height: 40px;
-    // margin-right: 5rem;
-    
-    .cart-count{
-        color: white;
-        font-weight: bold;
+    .cart-nav {
+        display: none;
 
+        .cart-count {
+            color: white;
+            font-weight: bold;
+        }
     }
- }
- 
 
- .scrolled-cart{
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    margin-right: 4%;
-    margin-bottom: 2rem;
-    // margin-left: 4%;
- }
-
-    // z-index: 1000;
-    // position: sticky;
-    // top: 0;
+    .scrolled-cart {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 4%;
+        margin-bottom: 2rem;
+    }
 
     ul {
         display: flex;
@@ -44,17 +34,13 @@
         list-style: none;
         padding: .3em;
         height: 7vh;
-        // margin-top: 1rem;
         margin-left: 5%;
-        // margin-right: 5%;
-        // margin-bottom: 1rem;
 
         a {
             display: inline-block;
             color: $clr-primary-background;
             font-size: 1.8rem;
             padding: .5em;
-            // margin-bottom: 5px;
             text-decoration: none;
 
             &:hover {
@@ -75,7 +61,6 @@
                     width: 100%;
                     animation: hover-effect 300ms ease-in-out;
                 }
-
             }
         }
 
@@ -97,22 +82,15 @@
             }
         }
     }
-
-
 }
 
 .scrolled {
     position: fixed;
     top: 0;
     z-index: 100;
-    // transition: top 2s ease-out;
-    // width: 100%;
     height: 11vh;
     align-items: center;
     background: $clr-primary;
-
-
-
 }
 
 @keyframes hover-effect {
@@ -124,12 +102,7 @@
     to {
         width: 100%;
     }
-
 }
-
-
-
-
 
 @media screen and (max-width:700px) {
     .navbar {
@@ -148,7 +121,8 @@
                 font-size: 1.2rem;
             }
         }
-        .scrolled-cart{
+
+        .scrolled-cart {
             width: 1.3rem;
             height: 1.3rem;
         }

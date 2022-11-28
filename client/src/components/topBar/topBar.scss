@@ -1,12 +1,6 @@
 @import '../../variables.scss';
 
 .topBar {
-    // position: sticky;
-    // top: 0;
-    // z-index: 1000;
-    // background: $clr-primary-background;
-    // animation: topbar-animation 500ms ease-in-out;
-
     .top {
         display: grid;
         grid-template-columns: 10% repeat(3, 1fr);
@@ -17,19 +11,14 @@
             position: relative;
             top: 1rem;
             left: 3%;
-            // width: 50%;
-            // min-width: 7rem;
             width: 7vw;
         }
 
         .phone {
-            // position: absolute;
-            // top: 1rem;
             margin-top: 1rem;
             height: 3rem;
             align-items: center;
             display: flex;
-
 
             .red-phone {
                 width: 1.7rem;
@@ -51,7 +40,6 @@
             text-align: left;
 
             .info {
-
                 color: red;
                 font-weight: bold;
                 font-size: 1.1rem;
@@ -64,7 +52,6 @@
         }
 
         .cart {
-            // margin-top: 2rem;
             width: 40%;
 
             &:hover {
@@ -75,17 +62,6 @@
     }
 }
 
-// .scrolled {
-//     position: fixed;
-//     width: 100%;
-//     top: 0;
-//     animation: topbar-animation 300ms ease-in;
-
-//     ul {
-//         margin-bottom: 0;
-//     }
-// }
-
 @keyframes phone-rotate {
     0% {
         transform: rotate(0deg) scale(1);
@@ -93,9 +69,7 @@
 
     100% {
         transform: rotate(60deg) scale(2);
-
     }
-
 }
 
 @keyframes topbar-animation {
@@ -256,8 +230,9 @@
         .top {
             display: grid;
             grid-template-columns: 10% repeat(2, 1fr);
+
             .top-info {
-               display: none;
+                display: none;
             }
         }
     }

@@ -15,9 +15,7 @@ export default function Basket(props) {
                     alt='cart'
                 ></img>
             </Link>
-
             <span>{cartItems.length}</span>
-
         </div>
     )
 }

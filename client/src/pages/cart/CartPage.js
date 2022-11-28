@@ -1,25 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './cartPage.scss'
 import OrderItemsList from '../../components/orderItem/OrderItemsList.js';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Modal from '../../components/modal/Modal';
 
 
 export default function CartPage(props) {
 
   const { cartItems, onAddToCart, onSubstract, onRemoveFromCart, setModalOpen } = props;
-
   const [deliveryType, setDeliveryType] = useState('');
   const [paymentType, setPaymentType] = useState('');
   const payload = {};
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [comment, setComment] = useState('');
-  
-  // useEffect(()=>{
 
-  // },[deliveryType,paymentType])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const checkFields = (fieldValue, id) => {
     if (fieldValue !== '') {
@@ -69,16 +67,10 @@ export default function CartPage(props) {
       .catch((e) => {
         console.log(e);
       });;
-
-    // const response = await axios.post(
-    //   "http://localhost:8080/api/sendemail",
-    //   data
-    // );
-    // console.log(response.data);
   };
 
 
-  const onSubmit = (payload, cartItems, deliveryType, paymentType, comment,setModalOpen) => {
+  const onSubmit = (payload, cartItems, deliveryType, paymentType, comment, setModalOpen) => {
     payload.cartItems = cartItems;
     payload.deliveryType = deliveryType;
     payload.paymentType = paymentType;
@@ -98,7 +90,7 @@ export default function CartPage(props) {
     console.log(payload);
     sendEmail();
     setModalOpen(true);
-    cartItems.length=0;
+    cartItems.length = 0;
   };
 
   //*  ** **  **     Rendering Part     **  **  **  */
@@ -149,7 +141,6 @@ export default function CartPage(props) {
                   onChange={e => setDeliveryType(e.target.value)}
                 />Самовывоз
               </label>
-              {/* <h1>{deliveryType}</h1> */}
 
             </div>
             <div className='payment-method fragment' id='paymentType'>
@@ -185,7 +176,6 @@ export default function CartPage(props) {
         </div>
         <button className='submit'
           onClick={() => onSubmit(payload, cartItems, deliveryType, paymentType, comment, setModalOpen)}
-        // onClick={() => sendEmail()}
         >Оформить заказ</button>
 
 

@@ -1,8 +1,7 @@
 import './orderItemsList.scss'
 
-export default function orderItem(props) {
+export default function OrderItem(props) {
   const { cartItems, onAddToCart, onSubstract, onRemoveFromCart } = props;
-  // const [qty, setqty] = useState(1);
   let summary = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
 
   return (
@@ -36,10 +35,14 @@ export default function orderItem(props) {
                   >+</button>
                   <input
                     className='count-input'
-                    type='text' pattern="[0-9]*"
+                  type='number'
+                    // type='text' pattern="[0-9]*"
+                   // onInput={()=>handleChange}
                     value={item.qty}
-                    onChange={e => item.qty = (e.target.value)}
+                    readOnly='true'
+                    // onChange={e => item.qty = (e.target.value)}
                   ></input>
+
                   <button
                     className='button minus'
                     onClick={() => onSubstract(item)}
@@ -51,7 +54,6 @@ export default function orderItem(props) {
                   >X</button>
 
                 </div>
-
               </td>
               <td className='price'>{item.price}</td>
               <td className='sum'>{item.price * item.qty}</td>
@@ -65,26 +67,6 @@ export default function orderItem(props) {
           </tr>
         </tbody>
       </table>
-
-      {/* <div key={item.id} >
-          <div className='item-container'>
-
-            <div className='image'><img src={item.image} alt={item.name}></img></div>
-            <div className='name'>{item.name}</div>
-            <div>001</div>
-            <div className='count'>
-              <button className='button minus'>-</button>
-              <input className='count-input' type='text' pattern="[0-9]*" value={item.count} onChange={e => item.count = (e.target.value)}></input>
-              <button className='button plus'>+</button>
-            </div>
-            <div className='price'>{item.price}</div>
-
-          </div>
-        </div> */}
     </div>
   )
-
-  // ))
-  // )
-
 }

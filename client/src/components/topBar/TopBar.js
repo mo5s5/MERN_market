@@ -3,32 +3,11 @@ import logo from '../../img/logo1.svg';
 import phone from '../../img/red-phone.svg';
 import './topBar.scss';
 import NavBar from './navBar/NavBar';
-import React, { useEffect } from 'react';
-
 
 function TopBar(props) {
     const { cartItems } = props;
-    //  const [scrolled, setScrolled] = React.useState(false);
-    // const handleScroll = () => {
-    //     const offset = window.scrollY;
-    //     if (offset > 200) {
-    //         setScrolled(true);
-    //     }
-    //     else {
-    //         setScrolled(false);
-    //     }
-    // }
 
-    // useEffect(() => {
-    //     window.addEventListener('scroll', handleScroll)
-    // })
-    // let navbarClasses = ['topBar'];
-    // if (scrolled) {
-    //     navbarClasses.push('scrolled');
-    // }
     return (
-        // <header className={navbarClasses.join(" ")}>
-        // <div className={navbarClasses.join(" ")}>
         <div className='topBar'>
             <div className='top'>
                 <img src={logo} className="logo" alt="logo"></img>
@@ -53,17 +32,11 @@ function TopBar(props) {
                         <span className='info'>Адрес: </span>
                         <span className='text'>МКАД, 98 км, вл3 (Одинцово)</span>
                     </div>
-
                 </div>
-
                 <Basket cartItems={cartItems}></Basket>
-
-
             </div>
             <div className='navbar'><NavBar cartItems={cartItems} /></div>
         </div>
-
     );
-
 }
 export default TopBar;

@@ -1,5 +1,17 @@
 @import'../../variables.scss';
 
+ /* Chrome, Safari, Edge, Opera */
+ ::-webkit-outer-spin-button,
+ ::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+ }
+
+ /* Firefox */
+ input[type=number] {
+     -moz-appearance: textfield;
+ }
+
 table,
 th,
 td {
@@ -62,6 +74,8 @@ table {
                 font-size: 1.1rem;
                 padding: 0;
                 border-color: red;
+
+               
             }
 
 
@@ -105,9 +119,10 @@ table {
 
 
                 td {
-                    .image{
+                    .image {
                         width: 3rem;
                     }
+
                     .count {
                         .count-input {
                             width: 2rem;
@@ -134,7 +149,8 @@ table {
             }
         }
 
-        .summary, .summary-text {
+        .summary,
+        .summary-text {
             font-size: .7rem;
         }
     }

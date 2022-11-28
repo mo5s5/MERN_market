@@ -3,19 +3,12 @@
 .container {
    position: relative;
    top: 1rem;
-
-   // .empty {
-   //    width: 6rem;
-
-   // }
-
    img {
       width: 5rem;
       height: 5rem;
    }
 
    .full {
-      // width: 6rem;
       animation: shake 800ms ease-in-out infinite;
       animation-delay: 200;
       animation-direction: alternate-reverse;

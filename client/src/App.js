@@ -16,40 +16,10 @@ import Modal from './components/modal/Modal';
 
 function App() {
 
-  // console.log(window.location);
-
-  // const { categories } = data;
-
   const [categories, setCategories] = useState([])
   const [cartItems, setCartItems] = useState([]);
   const [products, setProducts] = useState();
   const [modalOpen, setModalOpen] = useState(false);
-  
-
-
-
-  // const dbData=getCategories;
-  // console.log(dbData)
-  //  const { categories } = dbData;
-
-
-
-
-  /*** es sax texapoexeci useEffecti mej vor warning chberi EsLint@ mek el vor infinite zapros chuxarki
-  
-    // const dbData = [];
-    // const getCategories = () => {
-    //   axios.get('/api')
-    //     .then((response) => {
-    //       setCategories(response.data);
-    //       console.log('data has been received');
-    //       return dbData;
-    //     }).catch((error) => {
-    //       alert(error)
-    //     })
-    // }
-    
-    ******/
 
   useEffect(() => {
     const dbData = [];
@@ -100,7 +70,6 @@ function App() {
     }
   }
 
-
   const onRemoveFromCart = (cartItems, item) => {
     setCartItems(
       cartItems.filter(x => x.id !== item.id)
@@ -109,12 +78,11 @@ function App() {
 
   return (
     <div className='App'>
-              {modalOpen && <Modal setModalOpen={setModalOpen} />}
+      {modalOpen && <Modal setModalOpen={setModalOpen} />}
 
       <TopBar cartItems={cartItems} />
 
       <Routes>
-        {/* <Route path='/' element={<HomePage onAdd={onAdd} categories={categories} />}></Route> */}
         <Route path='/' element={
           <HomePage
             categories={categories}
@@ -125,7 +93,7 @@ function App() {
         <Route path='/basket'
           element={
             <CartPage
-            setModalOpen={setModalOpen}
+              setModalOpen={setModalOpen}
               cartItems={cartItems}
               onAddToCart={onAddToCart}
               onSubstract={onSubstract}
@@ -145,9 +113,7 @@ function App() {
         </Route>
 
         <Route path='/sale' element={<SalesPage />}></Route>
-        {/* <Route path='/products' element={<ProductsPage onAddToCart={onAddToCart} categories={categories} products={categories[0].products} />}></Route> */}
       </Routes>
-      {/* <Main onAdd={onAdd} categories={categories}></Main> */}
     </div>
   );
 }

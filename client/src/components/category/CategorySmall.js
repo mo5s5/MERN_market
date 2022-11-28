@@ -2,11 +2,9 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './categorySmall.scss';
 
-
 export default function CategorySmall(props) {
 
   const { categories, onChooseCategory } = props
-
   const [scrolled, setScrolled] = React.useState(false);
   const handleScroll = () => {
     const offset = window.scrollY;

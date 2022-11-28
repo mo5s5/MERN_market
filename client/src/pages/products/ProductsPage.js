@@ -28,14 +28,3 @@ export default function ProductsPage(props) {
     </div>
   )
 }
-
-
-// export default function ProductsPage(props) {
-//   const {categories, products}=props;
-// return (
-//   <div className='productPage'>
-//      {products.map((product) => (
-//               <CategorySmall key={product.id} product={product}></CategorySmall>
-//           ))}
-//   </div>
-// )

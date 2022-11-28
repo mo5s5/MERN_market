@@ -23,11 +23,8 @@ export default function ProductCard(props) {
                         onClick={() => onAddToCart(product)}
                         src={cartIcon} alt='cart'
                     ></img>
-
                 </div>
             </div>
-
-
         </div>
     )
 }
