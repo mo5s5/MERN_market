@@ -13,6 +13,7 @@ export default function CartPage(props) {
   const payload = {};
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
+  const [phone, setPhone] = useState('');
   const [comment, setComment] = useState('');
 
   useEffect(() => {
@@ -46,10 +47,11 @@ export default function CartPage(props) {
       \n*********************************\n 
       Способ доставки : ${info.deliveryType}  \n 
       Способ оплаты : ${info.paymentType}   \n
-      Комментарии :${info.comment}    \n 
-      Имя : ${info.name}   \n
+      Имя : ${info.name} 
+      Телефон: ${info.phone}
       Адресс : ${info.address}
-      \n К оплате:${info.cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+      Комментарии :${info.comment}  
+      \n К оплате:${info.cartItems.reduce((a, c) => a + c.price * c.qty, 0)} рублей
       `
 
     }
@@ -75,22 +77,25 @@ export default function CartPage(props) {
     payload.deliveryType = deliveryType;
     payload.paymentType = paymentType;
     checkFields(name, "name");
-    checkFields(address, 'address');
+    checkFields(phone, "phone");
     checkFields(deliveryType, 'deliveryType');
     checkFields(paymentType, 'paymentType');
+    checkFields(address, 'address');
 
     if (paymentType !== '' && deliveryType !== '' && name !== '' && address !== '') {
       payload.cartItems = cartItems;
       payload.name = name;
       payload.address = address;
+      payload.phone = phone;
       payload.deliveryType = deliveryType;
       payload.paymentType = paymentType;
       payload.comment = comment;
+      sendEmail();
+      setModalOpen(true);
+      cartItems.length = 0;
     }
     console.log(payload);
-    sendEmail();
-    setModalOpen(true);
-    cartItems.length = 0;
+
   };
 
   //*  ** **  **     Rendering Part     **  **  **  */
@@ -114,14 +119,15 @@ export default function CartPage(props) {
           </div>
           <div className='name fragment' id='name'>
             <div className='head'>Имя</div>
-            <input type={'text'} placeholder='Имя'
+            <input type={'text'} placeholder='Андрей'
               onChange={(e) => setName(e.target.value)}></input>
           </div>
 
-          <div className='address fragment' id='address'>
-            <div className='head'>Адрес</div>
-            <input type={'text'} placeholder='Адрес'
-              onChange={(e) => setAddress(e.target.value)}></input>
+
+          <div className='phone fragment' id='phone'>
+            <div className='head'>Телефон</div>
+            <input type={'number'} placeholder='+79684687012'
+              onChange={(e) => setPhone(e.target.value)}></input>
           </div>
           <div className='radio-fragment'>
             <div className='delivery-method fragment' id='deliveryType'>
@@ -165,6 +171,14 @@ export default function CartPage(props) {
 
             </div>
           </div>
+          {deliveryType === 'Доставка' &&
+            <div className='address fragment' id='address'>
+              <div className='head'>Адрес</div>
+              <input type={'text'} placeholder='Город, улица, дом, подъезд'
+                onChange={(e) => setAddress(e.target.value)}></input>
+            </div>
+          }
+
 
           <div className='comment fragment'>
             <div className='head'

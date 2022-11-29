@@ -53,7 +53,6 @@ function App() {
         [...cartItems, { ...product, qty: 1 }]
       )
     }
-    console.log(product.count);
   }
 
   const onSubstract = (product) => {
